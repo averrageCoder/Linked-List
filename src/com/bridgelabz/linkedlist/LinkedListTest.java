@@ -12,12 +12,13 @@ public class LinkedListTest {
 		myLinkedList.add(firstNode);
 		myLinkedList.append(secondNode);
 		myLinkedList.insert(firstNode,thirdNode);
-		System.out.print("Before Inserting : ");
+		//myLinkedList.searchAndInsert(30, fourthNode);	
+		myLinkedList.insert(thirdNode,fourthNode);
 		myLinkedList.printMyNodes();
+		System.out.println("Initial Size: "+myLinkedList.getSize());
 		
-		myLinkedList.searchAndInsert(30, fourthNode);
-		System.out.print("After Inserting : ");
+		myLinkedList.remove(40);
 		myLinkedList.printMyNodes();
-	}
-	
+		System.out.println("Size after deleting: "+myLinkedList.getSize());
+	}		
 }
