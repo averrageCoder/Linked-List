@@ -18,7 +18,11 @@ public class LinkedListTest {
 		System.out.print("After Popping : ");
 		myLinkedList.printMyNodes();
 		
-		
+		if(myLinkedList.search(30)) {
+			System.out.println("Match found!");
+		}
+		else
+			System.out.println("Match not found!");
 	}
 	
 }
