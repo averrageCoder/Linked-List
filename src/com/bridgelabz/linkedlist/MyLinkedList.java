@@ -82,7 +82,6 @@ public class MyLinkedList {
 	public <K> boolean search(K key) {
 		
 		INode tempNode = head;
-		K nodeKey;
 		while(tempNode!=null) {
 			if(tempNode.getKey().equals(key)) {
 				return true;
@@ -90,6 +89,20 @@ public class MyLinkedList {
 			tempNode=tempNode.getNext();
 		}
 		return false;
+	}
+
+	public <K> boolean searchAndInsert(K key, INode fourthNode) {
+		
+		INode tempNode = head;
+		while(tempNode!=null) {
+			if(tempNode.getKey().equals(key)) {
+				this.insert(tempNode, fourthNode);
+				return true;
+			}
+			tempNode=tempNode.getNext();
+		}
+		return false;
+		
 	}
 	
 }
