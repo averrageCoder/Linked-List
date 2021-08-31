@@ -8,17 +8,16 @@ public class LinkedListTest {
 		MyNode<Integer> secondNode = new MyNode<Integer>(70);
 		MyNode<Integer> thirdNode = new MyNode<Integer>(30);
 		MyNode<Integer> fourthNode = new MyNode<Integer>(40);
-		MyLinkedList myLinkedList = new MyLinkedList();
-		myLinkedList.add(firstNode);
-		myLinkedList.append(secondNode);
-		myLinkedList.insert(firstNode,thirdNode);
-		//myLinkedList.searchAndInsert(30, fourthNode);	
-		myLinkedList.insert(thirdNode,fourthNode);
-		myLinkedList.printMyNodes();
-		System.out.println("Initial Size: "+myLinkedList.getSize());
 		
-		myLinkedList.remove(40);
-		myLinkedList.printMyNodes();
-		System.out.println("Size after deleting: "+myLinkedList.getSize());
+		
+		SortedLinkedList mySortedLinkedList = new SortedLinkedList();
+		mySortedLinkedList.add(firstNode);
+		mySortedLinkedList.printMyNodes();
+		mySortedLinkedList.add(fourthNode);
+		mySortedLinkedList.printMyNodes();
+		mySortedLinkedList.add(thirdNode);
+		mySortedLinkedList.printMyNodes();
+		mySortedLinkedList.add(secondNode);
+		mySortedLinkedList.printMyNodes();
 	}		
 }
