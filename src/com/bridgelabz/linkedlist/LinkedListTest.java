@@ -14,7 +14,7 @@ public class LinkedListTest {
 		myLinkedList.insert(firstNode,thirdNode);
 		System.out.print("Before Popping : ");
 		myLinkedList.printMyNodes();
-		System.out.println("Popped element : "+myLinkedList.pop().getKey());
+		System.out.println("Popped element : "+myLinkedList.popLast().getKey());
 		System.out.print("After Popping : ");
 		myLinkedList.printMyNodes();
 		
