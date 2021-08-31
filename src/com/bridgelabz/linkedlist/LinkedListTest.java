@@ -12,7 +12,10 @@ public class LinkedListTest {
 		myLinkedList.add(firstNode);
 		myLinkedList.append(secondNode);
 		myLinkedList.insert(firstNode,thirdNode);
-		
+		System.out.print("Before Popping : ");
+		myLinkedList.printMyNodes();
+		System.out.println("Popped element : "+myLinkedList.pop().getKey());
+		System.out.print("After Popping : ");
 		myLinkedList.printMyNodes();
 		
 		
