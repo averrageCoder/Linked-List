@@ -4,10 +4,12 @@ public class MyLinkedList {
 	
 	private INode head;
 	private INode tail;
+	private int size;
 
 	public MyLinkedList() {
 		this.head = null;
 		this.tail=null;
+		this.size=0;
 	}
 
 	public void add(INode myNode) {
@@ -23,19 +25,24 @@ public class MyLinkedList {
 			this.head = myNode;
 			this.head.setNext(tempNode);
 		}
+		this.size++;
 	}
 	
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My nodes: ");
 		INode tempNode = this.head;
-		while(tempNode.getNext()!=null) {
+		if(tempNode==null)
+			System.out.println("Empty List!");
+		else {
+			while(tempNode.getNext()!=null) {
+				myNodes.append(tempNode.getKey());
+				if(!tempNode.equals(tail))
+					myNodes.append("->");
+				tempNode = tempNode.getNext();
+			}
 			myNodes.append(tempNode.getKey());
-			if(!tempNode.equals(tail))
-				myNodes.append("->");
-			tempNode = tempNode.getNext();
+			System.out.println(myNodes);
 		}
-		myNodes.append(tempNode.getKey());
-		System.out.println(myNodes);
 	}
 
 	public void append(INode myNode) {
@@ -49,7 +56,7 @@ public class MyLinkedList {
 		if(this.head==null) {
 			this.head=myNode;
 		}
-		
+		this.size++;
 	}
 
 	public void insert(INode startNode, INode newNode) {
@@ -57,7 +64,7 @@ public class MyLinkedList {
 		INode tempNode = startNode.getNext();
 		startNode.setNext(newNode);
 		newNode.setNext(tempNode);
-		
+		this.size++;
 	}
 
 	public INode pop() {
@@ -99,6 +106,33 @@ public class MyLinkedList {
 				this.insert(tempNode, fourthNode);
 				return true;
 			}
+			tempNode=tempNode.getNext();
+		}
+		return false;
+		
+	}
+
+	public int getSize() {
+		// TODO Auto-generated method stub
+		return this.size;
+	}
+
+	public <K> boolean remove(K key) {
+		
+		INode tempNode = head, prevNode=null;
+		while(tempNode!=null) {
+			if(tempNode.getKey().equals(key)) {
+				if(tempNode.equals(head))
+					this.head=tempNode.getNext();
+				else
+					prevNode.setNext(tempNode.getNext());
+				if(tempNode.equals(tail))
+					this.tail=prevNode;
+				
+				this.size--;
+				return true;
+			}
+			prevNode = tempNode;
 			tempNode=tempNode.getNext();
 		}
 		return false;
