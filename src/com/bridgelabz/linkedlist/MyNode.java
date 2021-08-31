@@ -1,21 +1,34 @@
 package com.bridgelabz.linkedlist;
 
-public class MyNode<K> {
+public class MyNode<K> implements INode<K>{
 
 	private K key;
-	private MyNode next;
+	private INode next;
 	
 	public MyNode(K key) {
-		this.key = null;
+		this.key = key;
 		this.next=null;
 	}
 	
-	public void setNext(MyNode next){
+	public void setNext(INode next){
 		this.next=next;
 	}
 
-	public MyNode getNext(){
+	public INode getNext(){
 		return this.next;
+	}
+
+	@Override
+	public K getKey() {
+		// TODO Auto-generated method stub
+		return key;
+	}
+
+	@Override
+	public void setKey(K Key) {
+		// TODO Auto-generated method stub
+		this.key = key;
+		
 	}
 	
 }
